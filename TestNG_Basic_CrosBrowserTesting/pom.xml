@@ -3,6 +3,21 @@
   <groupId>TestNG_Basic_CrosBrowserTesting</groupId>
   <artifactId>TestNG_Basic_CrosBrowserTesting</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
   <dependencies>
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -27,6 +42,11 @@
 			<version>7.7.1</version>
 			<scope>test</scope>
 		</dependency>
+		
+		
+		
+
+		
 
 	</dependencies>
 </project>
