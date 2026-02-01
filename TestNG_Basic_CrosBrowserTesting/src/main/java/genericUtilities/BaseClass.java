@@ -55,12 +55,13 @@ public class BaseClass {
 	}
 
 	@BeforeMethod // this method is used to login
-	public void login() {
-		driver.findElement(By.xpath("//input[@placeholder='Username']")).sendKeys("Admin");
+	public void login() throws InterruptedException {
+		driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/div[2]/input")).sendKeys("Admin");
+		Thread.sleep(3000);
 
-		driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys("admin123");
-
-		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		driver.findElement(By.xpath("/html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div/div[2]/input")).sendKeys("admin123");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")).click();
 	}
 	@AfterMethod //it is used to logout
 	public void logout() throws InterruptedException
